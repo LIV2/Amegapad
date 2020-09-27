@@ -52,6 +52,16 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #define BTN_X      (1<<2)
 #define BTN_MODE   (1<<3)
 
+/*
+ Autofire configuration.
+ If configuring one of X Y Z as an autofire button then the relevant state is buttonstate2
+ Otherwise use buttonstate1
+*/
+#define AUTOFIRE_A_BUTTON BTN_Y
+#define AUTOFIRE_A_STATE  buttonstate2
+#define AUTOFIRE_B_BUTTON BTN_C
+#define AUTOFIRE_B_STATE  buttonstate1
+
 #define AF_FRAMES  3
 
 uint8_t buttonstate1;
@@ -147,12 +157,12 @@ ISR (TIMER0_COMPA_vect) {
         setButton(BTN_DOWN,A_DOWN);
         setButton(BTN_LEFT,A_LEFT);
         setButton(BTN_RIGHT,A_RIGHT);
-        if (!(buttonstate2 & BTN_Y)) {
+        if (!(AUTOFIRE_A_STATE & AUTOFIRE_A_BUTTON)) {
           setFire(A_1, counter % AF_FRAMES);
         } else {
           setButton(BTN_A,A_1);
         }
-        if (!(buttonstate1 & BTN_C)) {
+        if (!(AUTOFIRE_B_STATE & AUTOFIRE_B_BUTTON)) {
           setFire(A_2, counter % AF_FRAMES);
         } else {
           setButton(BTN_B,A_2);
