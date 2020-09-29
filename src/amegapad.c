@@ -62,7 +62,7 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 #define AUTOFIRE_B_BUTTON BTN_C
 #define AUTOFIRE_B_STATE  buttonstate1
 
-#define AF_FRAMES  3
+#define AF_FRAMES  3 // Autofire modulo - configures autofire rate
 
 uint8_t buttonstate1;
 uint8_t buttonstate2;
