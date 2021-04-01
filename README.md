@@ -4,7 +4,7 @@ This is an Adapter that allows the use of 6-button controllers on the Amiga and 
 
 ![PCB](PCB.png?raw=True)
 
-### Roadmap
+### ~~Roadmap~~ Things I want to add but probably won't get around to
 
 * Add ability to configure button mapping on the fly
 * Add ability to change Autofire speed on the fly
